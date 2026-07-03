@@ -6,6 +6,12 @@ Search your phone gallery using natural language, completely offline using on-de
 
 Finding a specific image in a gallery containing thousands of photos is often frustrating.
 
+## Screenshots
+
+<p align="center">
+  <img src="photofindss1.jpg" width="45%">
+  <img src="photofindss2.jpg" width="45%">
+</p>
 Whether you're searching for:
 
 - Aadhaar Card
