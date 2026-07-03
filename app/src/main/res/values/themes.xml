@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PhotoFindAi" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="android:statusBarColor">#0D0D0D</item>
+        <item name="android:windowBackground">#0D0D0D</item>
+        <item name="bottomSheetDialogTheme">@style/Theme.PhotoFindAi.BottomSheetDialog</item>
+    </style>
+
+    <style name="Theme.PhotoFindAi" parent="Base.Theme.PhotoFindAi" />
+
+    <style name="Theme.PhotoFindAi.BottomSheetDialog" parent="Theme.Material3.DayNight.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle" parent="Widget.Material3.BottomSheet">
+        <item name="backgroundTint">#1A1A1A</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.LargeComponent</item>
+    </style>
+
+    <style name="ShapeAppearance.App.LargeComponent" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <style name="Theme.PhotoFindAi.Splash" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/splash_background</item>
+        <item name="android:statusBarColor">@color/splash_background</item>
+        <item name="android:navigationBarColor">@color/splash_background</item>
+    </style>
+</resources>

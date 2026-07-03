@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0D0D"
+    android:padding="16dp">
+
+    <!-- Search Options Header -->
+    <TextView
+        android:id="@+id/tv_search_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Text Search Input -->
+    <EditText
+        android:id="@+id/et_search_text"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_search_input"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="12dp"
+        android:hint="Search by text..."
+        android:paddingHorizontal="16dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#707070"
+        app:layout_constraintTop_toBottomOf="@id/tv_search_title" />
+
+    <!-- Image Search Options -->
+    <TextView
+        android:id="@+id/tv_or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="OR"
+        android:textColor="#707070"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_search_text" />
+
+    <LinearLayout
+        android:id="@+id/ll_image_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tv_or">
+
+        <LinearLayout
+            android:id="@+id/btn_camera"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_search_input"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_camera"
+                app:tint="#7E57C2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Camera"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_gallery"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_search_input"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_gallery"
+                app:tint="#7E57C2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Gallery"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Selected Image Preview -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_selected_image"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_search_input"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tv_or">
+
+        <ImageView
+            android:id="@+id/iv_selected_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:alpha="0.6" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Image Selected"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_remove_image"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#FFFFFF" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_search_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="ll_image_search,cl_selected_image" />
+
+    <!-- Controls: Dropdown and Search Button -->
+    <LinearLayout
+        android:id="@+id/ll_controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/barrier_search_options">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Results:"
+            android:textColor="#707070" />
+
+        <Spinner
+            android:id="@+id/spinner_limit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#7E57C2"
+            android:entries="@array/search_limits" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btn_search_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#7E57C2"
+            android:text="Search"
+            android:textAllCaps="false"
+            app:cornerRadius="8dp" />
+    </LinearLayout>
+
+    <!-- Results Grid -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_search_results"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_controls"
+        app:spanCount="3"
+        tools:listitem="@layout/item_search_result" />
+
+    <!-- Detail Overlay -->
+    <include
+        android:id="@+id/detail_overlay"
+        layout="@layout/fragment_image_detail"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

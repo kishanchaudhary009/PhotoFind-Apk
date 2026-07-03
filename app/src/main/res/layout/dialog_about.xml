@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#1A1A1A"
+    android:padding="24dp">
+
+    <View
+        android:id="@+id/view_handle"
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:background="#333333"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_about_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="About"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_handle" />
+
+    <ImageButton
+        android:id="@+id/btn_close_about"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_close"
+        app:layout_constraintBottom_toBottomOf="@id/tv_about_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_about_title"
+        app:tint="#707070" />
+
+    <TextView
+        android:id="@+id/tv_about_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:lineSpacingExtra="4dp"
+        android:text="Uses CLIP-ViT-B-32-laion2B-s34B-b79K by LAION/OpenCLIP.\nLicensed under the MIT License.\n\nModel modified/quantized for on-device inference.\n\nNo user data is sent to servers.\nAll AI processing happens locally on-device."
+        android:textColor="#B0B0B0"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_about_title" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="PhotoFind Ai v1.0"
+        android:textColor="#505050"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_about_content" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
